@@ -1,4 +1,4 @@
-```yaml
+
 
 name: Build TROPA DE SAJ
 
@@ -26,4 +26,3 @@ jobs:
             ls -la
             test -f src/main.c
             echo "Codigo-fonte encontrado"
-```
