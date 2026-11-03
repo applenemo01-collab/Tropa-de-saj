@@ -1,0 +1,29 @@
+```yaml
+
+name: Build TROPA DE SAJ
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar projeto
+        uses: actions/checkout@v4
+
+      - name: Preparar OpenOrbis
+        uses: OpenOrbis/toolchain-action@main
+        with:
+          version: v0.5.1
+          command: |
+            echo "Preparando compilacao da TROPA DE SAJ"
+            echo "Verificando arquivos do projeto"
+            ls -la
+            test -f src/main.c
+            echo "Codigo-fonte encontrado"
+```
